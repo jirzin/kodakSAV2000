@@ -12,7 +12,7 @@ int index = 0;
 // 2.. = not implemented
 // second number represent delay to another step
 const int steps = 10;    // number of intervals to be executed
-unsigned long intervalList [steps] [2] = {
+unsigned int intervalList [steps] [2] = {
   {0, 4000},
   {0, 4000},
   {0, 4000},
