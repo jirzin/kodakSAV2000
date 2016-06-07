@@ -1,5 +1,5 @@
-const int pinForward = 2;
-const int pinBackward = 3;
+const int pinForward = 13;
+const int pinBackward = 13;
 const int switchTime = 200;  // time for which switch is on
 
 
@@ -12,7 +12,7 @@ int index = 0;
 // 2.. = not implemented
 // second number represent delay to another step
 const int steps = 10;    // number of intervals to be executed
-int intervalList [steps] [2] = {
+unsigned long intervalList [steps] [2] = {
   {0, 4000},
   {0, 4000},
   {0, 4000},
@@ -30,14 +30,16 @@ void setup() {
   pinMode(pinBackward, OUTPUT);
 }
 
+
 void loop() {
   readIntervals();
 }
 
+
 void readIntervals() {
   for (int i = 0; i < steps; i++) {
     int x = intervalList[i][0];
-    int t = intervalList[i][1];
+    unsigned int t = intervalList[i][1];
     switch (x) {
       case 0:
         digitalWrite(pinForward, HIGH);
